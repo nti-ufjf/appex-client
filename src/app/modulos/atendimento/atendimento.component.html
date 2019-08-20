@@ -1,0 +1,43 @@
+<mat-card class="dados-card">
+    <h4>Lançar Atendimento ao Paciente {{paciente.nome}}</h4>
+
+    <mat-form-field>
+        <mat-label>Curso:</mat-label>
+        <mat-select [(ngModel)]="atendimento.curso" required>
+            <mat-option>--Selecione um curso--</mat-option>
+            <mat-option *ngFor="let curso of cursos" [value]="curso">
+                {{curso.nome}}
+            </mat-option>
+        </mat-select>
+        <mat-error *ngIf="formAtendimento.hasError('required')">Por favor, selecione um curso</mat-error>
+        <mat-hint>{{formAtendimento.value?.viewValue}}</mat-hint>
+    </mat-form-field>
+    <br>
+
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Procedimento" [(ngModel)]="atendimento.procedimento">
+    </mat-form-field>
+
+    <br>
+
+    <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="Data de Atendimento"  [value]="atendimento.data">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <br>
+
+    <mat-form-field class="example-full-width">
+        <textarea matInput placeholder="Anotações" [(ngModel)]="atendimento.descricao"></textarea>
+    </mat-form-field>
+
+    <br>
+
+
+    <mat-card-actions>
+        <button mat-button (click)="salvar(atendimento)">Salvar</button>
+        <button mat-button (click)="cancelar()">Cancelar</button>
+    </mat-card-actions>
+
+</mat-card>

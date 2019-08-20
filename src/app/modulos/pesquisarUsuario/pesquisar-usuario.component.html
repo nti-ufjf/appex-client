@@ -1,0 +1,87 @@
+<form class="example-form">
+    <mat-card class="example-card">
+        <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>Pesquisar um Usuario</mat-card-title>
+            <mat-card-subtitle>Opções de Filtro</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Nome" id="filtro" [(ngModel)]="filtro.nome" name="nome" value="">
+                </mat-form-field>
+                <button mat-button (click)="pesquisar()">Filtrar</button>
+                <button mat-button (click)="limparPesquisa()">Limpar</button>
+        </mat-card-content>
+    </mat-card>
+    <br>
+
+    <button mat-button (click)="incluirRegistro()">Incluir</button>
+    <div class="container">
+        <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
+            <div fxFlex="5%">
+                <b>Id</b>
+            </div>
+            <div fxFlex="45%">
+                <b>Nome</b>
+            </div>
+            <div fxFlex="30%">
+                <b>Opções</b>
+            </div>
+        </div>
+        <br>
+        <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center" *ngFor="let p2 of pacientes">
+            <div fxFlex="5%">
+                {{ p2.id }}
+            </div>
+            <div fxFlex="45%">
+                {{ p2.nome }}
+            </div>
+            <div fxFlex="30%">
+                <button mat-button (click)="visualizarPessoa(p2)">Visualizar</button>
+                <button mat-button (click)="onDelete(p2); $event.stopPropagation()">Deletar</button>
+            </div>
+        </div>
+    </div>
+    <button mat-button (click)="incluirRegistro()">Incluir</button>
+
+    <!--
+    <nav>
+        <div>
+            <ul id="nav-mobile">
+                <li *ngFor="let p3 of pacientes" routerLinkActive="active"><a [routerLink]="['/paciente', p3.id]">Paciente {{p3.id}}</a></li>                
+            </ul>
+        </div>
+    </nav>
+ -->
+</form>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <h3>Lista de Pacientes</h3>
+            <a routerLink="/paciente/salvar" class="btn btn-success">Novo</a>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>CPF</th>
+                        <th>Deletar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let p of pacientes" [routerLink]="'/paciente/salvar/'+p.id">
+                        <td>{{p.nome}}</td>
+                        <td>{{p.email}}</td>
+                        <td>{{p.cpf}}</td>
+                        <td><button class="btn btn-danger" (click)="onDelete(p); $event.stopPropagation()">Deletar</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

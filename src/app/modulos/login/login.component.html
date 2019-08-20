@@ -1,0 +1,13 @@
+    <mat-card class="login-card">
+
+        <h3>Login</h3>
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Usuário" value="" id="usuario" [(ngModel)]="usuario.nome">
+        </mat-form-field>
+        <br>
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Senha" value="" id="senha" [(ngModel)]="usuario.senha">
+        </mat-form-field>
+        <br><button mat-button (click)="fazerLogin()">Adicionar</button>
+
+    </mat-card>

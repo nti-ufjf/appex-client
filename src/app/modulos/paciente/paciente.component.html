@@ -1,0 +1,44 @@
+<h4>Paciente</h4>
+
+
+<mat-card class="dados-card">
+    <br>Codigo: {{pessoa.id}}
+    <br>Nome: {{pessoa.nome}}
+    <br>Email: {{pessoa.email}}
+</mat-card>
+<br><br>
+
+<button mat-button (click)="IrParaPesquisa()" *ngIf="!lancando">Pesquisar
+    <mat-icon>launch</mat-icon>
+</button>
+<button mat-button disabled *ngIf="lancando">Pesquisar
+    <mat-icon>launch</mat-icon>
+</button>
+
+<button mat-button (click)="Alterar(pessoa)" *ngIf="!lancando">Alterar
+    <mat-icon>event</mat-icon>
+</button>
+<button mat-button disabled *ngIf="lancando">Alterar
+    <mat-icon>event</mat-icon>
+</button>
+
+<button mat-button (click)="IrParaPesquisa()" *ngIf="!lancando">Excluir
+    <mat-icon>backspace</mat-icon>
+</button>
+<button mat-button *ngIf="lancando" disabled>Excluir
+    <mat-icon>backspace</mat-icon>
+</button>
+
+<button mat-button (click)="Lancar()" *ngIf="!lancando">Lançar Atendimento</button>
+<button mat-button disabled *ngIf="lancando">Lançar Atendimento</button>
+
+<br><br>
+
+
+<mat-card class="historico-card" *ngIf="!lancando">
+    <app-historico></app-historico>
+</mat-card>
+<mat-card class="atender-card" *ngIf="lancando">
+    <app-atendimento></app-atendimento>
+</mat-card>
+<br><br>

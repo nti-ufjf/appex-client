@@ -1,0 +1,27 @@
+<h4>Local de Atendimento</h4>
+
+
+<mat-card class="dados-card">
+    <br>Codigo: {{modelo.id}}
+    <br>Nome: {{modelo.nome}}
+    <br>Email: {{modelo.descricao}}
+    <br>
+    <br>Endereço: {{modelo.endereco?.logradouro}} , {{modelo.endereco?.numero}}, {{modelo.endereco?.complemento}},
+    Bairro {{modelo.endereco?.bairro}} - CEP.: {{modelo.endereco?.cep}}
+</mat-card>
+<br><br>
+
+<button mat-button (click)="IrParaPesquisa()" >Pesquisar
+    <mat-icon>launch</mat-icon>
+</button>
+
+<button mat-button (click)="Alterar(modelo)" >Alterar
+    <mat-icon>event</mat-icon>
+</button>
+
+<button mat-button (click)="onDelete(modelo); $event.stopPropagation()">Excluir
+    <mat-icon>backspace</mat-icon>
+</button>
+
+<br><br>
+

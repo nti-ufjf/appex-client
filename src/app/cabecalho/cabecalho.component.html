@@ -1,0 +1,78 @@
+<header class="headerGlobal	mdl-layout__header">
+    <button class="mdl-layout__drawer-button" (click)="toggleMenu()">
+        <span class="material-icons">menu</span>
+    </button>
+    <div class="mdl-layout__header-row">
+        <span class="headerGlobal__title	mdl-layout-title">
+            <a routerLink="/home" routerLinkActive="router-link-active" class="mdl-navigation__link">
+                Registro Acadêmico Assistencial
+            </a>
+        </span>
+        <div class="mdl-layout-spacer"></div>
+    </div>
+</header>
+
+<router-outlet></router-outlet>
+
+<section class="headerGlobal__menuArea	mdl-layout__drawer" [ngClass]="{	'headerGlobal__menuArea--active':	isMenuOpen	}">
+    <span class="mdl-layout-title">
+        <img class="headerGlobal__logo" src="assets/img/logo.svg" alt="UFJF/GV">
+    </span>
+    <header class="headerGlobal__userInfo">
+        <img src="{{usuarioLogado.pathFoto}}" class="headerGlobal__userInfoAvatar">
+        <div class="headerGlobal__userInfoData">
+            <h5 class="headerGlobal__userInfoDataName">{{usuarioLogado.nome}}</h5>
+            <span>{{usuarioLogado.email}}</span>
+            <div class="mdl-layout-spacer"></div>
+        </div>
+    </header>
+
+    <!--	*ngIf="mostrarMenu"	-->
+    <nav  class="mdl-navigation">
+        <a routerLink="/home" routerLinkActive="router-link-active" class="mdl-navigation__link">
+            <span class="material-icons">person</span> Home
+        </a>
+        <a routerLink="/atendimento" class="mdl-navigation__link">
+            <span class="material-icons">person</span> Lançar Atendimento Individual
+        </a>
+
+        <a routerLink="/atendimento" class="mdl-navigation__link">
+            <span class="material-icons">person</span> Lançar Atendimento em Grupo
+        </a>
+
+        <a routerLink="/pesquisar" class="mdl-navigation__link">
+            <span class="material-icons">person</span> Pesquisar/Incluir Paciente
+        </a>
+        <a routerLink="/parametro" class="mdl-navigation__link">
+            <span class="material-icons">person</span> Configuração
+        </a>
+        <a routerLink="/sobre" class="mdl-navigation__link">
+            <span class="material-icons">logout</span> Sobre
+        </a>
+
+
+        <!--	cadastros básicos	-->
+        <a routerLink="/bairros" class="mdl-navigation__link">
+            <span class="material-icons">bairros</span> Bairros
+        </a>
+
+        <a routerLink="/cursos" class="mdl-navigation__link">
+            <span class="material-icons">logout</span> Cursos e Procedimentos
+        </a>
+
+
+        <a routerLink="/locais/" class="mdl-navigation__link">
+            <span class="material-icons">logout</span> Locais
+        </a>
+        
+        <a routerLink="/usuarios" class="mdl-navigation__link">
+            <span class="material-icons">person</span> Usuários e seus acessos
+        </a>
+
+        <a routerLink="" class="mdl-navigation__link">
+                <span class="material-icons">person</span> Login/Logout
+            </a>
+        </nav>
+
+</section>
+<div class="headerGlobal__menuOverlay" (click)="toggleMenu()"></div>

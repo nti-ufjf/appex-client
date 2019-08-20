@@ -1,0 +1,40 @@
+<h4>Alteração - Local de Atendimento {{id}}</h4>
+
+
+<mat-card class="dados-card">
+    <br>Codigo: {{modelo.id}}
+    <br>
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Nome" value="" id="nome" [(ngModel)]="modelo.nome" enabled=false>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Descrição" value="" id="descricao" [(ngModel)]="modelo.descricao">
+    </mat-form-field>
+    <br>
+
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Logradouro" value="" id="logradouro" [(ngModel)]="modelo.endereco.logradouro">
+    </mat-form-field>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Número" value="" id="numero" [(ngModel)]="modelo.endereco.numero">
+    </mat-form-field>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Complemento" value="" id="complemento" [(ngModel)]="modelo.endereco.complemento">
+    </mat-form-field>
+    <br>
+    
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Bairro" value="" id="bairro" [(ngModel)]="modelo.endereco.bairro">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="CEP" value="" id="cep" [(ngModel)]="modelo.endereco.cep">
+    </mat-form-field>
+    <br>
+
+    <button mat-button (click)="salvar(modelo)">Salvar</button>
+    <button mat-button (click)="cancelar(modelo)">Cancelar</button>
+</mat-card>

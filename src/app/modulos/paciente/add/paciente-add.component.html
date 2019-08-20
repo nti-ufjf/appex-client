@@ -1,0 +1,24 @@
+<h4>Inclusão de Ficha do Paciente {{id}}</h4>
+
+
+<mat-card class="dados-card">
+    <br>
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Nome" value="" id="nome" [(ngModel)]="paciente.nome" enabled=false>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="E-mail" value="" id="email" [(ngModel)]="paciente.email">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="CPF" value="" id="cpf" [(ngModel)]="paciente.cpf">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <input matInput placeholder="Nascimento" [(ngModel)]="paciente.nascimento">
+    </mat-form-field>
+    <br>
+    <button mat-button (click)="salvar(paciente)">Salvar</button>
+    <button mat-button (click)="cancelar()">Cancelar</button>
+</mat-card>

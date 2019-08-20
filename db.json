@@ -1,0 +1,16 @@
+{
+  "pessoas": [
+    {
+      "id": "1",
+      "nome": "Linkin Park"
+    },
+    {
+      "id": "2",
+      "nome": "System of a Down"
+    },
+    {
+      "id": "3",
+      "nome": "Metallica"
+    }	
+  ]
+}
